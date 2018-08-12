@@ -1,0 +1,25 @@
+{
+  "name": "treehouse_php_course",
+  "version": "1.0.0",
+  "description": "learning PHP for Wordpress",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernestdpeterson/PHP.git"
+  },
+  "author": "Ernest D. Peterson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ernestdpeterson/PHP/issues"
+  },
+  "homepage": "https://github.com/ernestdpeterson/PHP#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}
