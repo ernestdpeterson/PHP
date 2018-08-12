@@ -36,15 +36,30 @@ var eslint = require('gulp-eslint');
 var concat = require('gulp-concat');
 // npm install --save-dev gulp-uglify
 var uglify = require('gulp-uglify');
+// npm install --save-dev gulp-connect-php
+var connect = require('gulp-connect-php');
 
 gulp.task('default', function(done) {
     //gulp.watch('sass/**/*.scss', ['styling']);
     //gulp.watch('js/**/*.js', ['lint', 'scripts']);
-    gulp.watch(['PHP.php']).on('change', browserSync.reload);
+    gulp.watch(['./*.php']).on('change', browserSync.reload);
     browserSync.init({
-        server: './PHP.php'
+        // server: './'
+        proxy: '127.0.0.1:8000'
     });
     done();
+});
+
+gulp.task('connect-sync', function() {
+  connect.server({}, function (){
+    browserSync.init({
+      proxy: '127.0.0.1:8000'
+    });
+  });
+ 
+  gulp.watch('**/*.php').on('change', function () {
+    browserSync.reload();
+  });
 });
 
 gulp.task('browserSync', function(done) {
